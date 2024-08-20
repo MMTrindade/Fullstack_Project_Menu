@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CardapioApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(CardapioApplication.class, args);
 	}
 
