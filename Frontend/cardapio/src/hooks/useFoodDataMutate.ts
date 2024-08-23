@@ -8,7 +8,7 @@ const API_URL = 'http://localhost:8080';
 
 const postData = async (data: FoodData): AxiosPromise <any>=> {
     //Response from backend. The only parameter is the backend URL
-    const response = axios.post(API_URL + '/food/', data);
+    const response = axios.post(API_URL + '/food', data);
     return response;
 }
 
@@ -19,7 +19,7 @@ export function useFoodDataMutate() {
         mutationFn: postData,
         retry: 2,
         onSuccess: () => {
-            queryClient.invalidateQueries(['food-data'])
+            queryClient.invalidateQueries({ queryKey: ['food-data'] })
             //food-data is the queryKey from useFoodData
         }
     })

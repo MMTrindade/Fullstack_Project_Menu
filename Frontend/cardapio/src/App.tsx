@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
-import { FoodData } from './interface/FoodData';
 import { Card } from './components/card/card';
+import { FoodData } from './interface/FoodData';
 import { useFoodData } from './hooks/useFoodData';
 import { CreateModal } from './components/create-modal/create-modal';
 
@@ -18,6 +18,7 @@ function App() {
   }
   
   return (
+      
       <div className="container">
         <h1>Cardapio</h1>
         <div className="card-grid">
@@ -25,6 +26,7 @@ function App() {
           {/*data might be extracted or not from the API, so use ? in case it is empty*/}
           {data?.map(foodData => 
             <Card 
+              key={foodData.id}  // Using the id as the key
               price={foodData.price} 
               title={foodData.title} 
               image={foodData.image}

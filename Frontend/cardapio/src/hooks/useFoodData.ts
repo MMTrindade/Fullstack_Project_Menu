@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 const API_URL = 'http://localhost:8080';
 
-const fetchData = async (): AxiosPromise <FoodData>=> {
+const fetchData = async (): AxiosPromise <FoodData[]> => {
     //Response from backend. The only parameter is the backend URL
     const response = axios.get(API_URL + '/food');
     return response;
