@@ -8,7 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+//Permitir todas as origens e headers  por hora, durante o teste. Depois restringir pro dominio do frontend.
+//@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("food") //o endpoint desse controller é food
 public class FoodController {
@@ -17,8 +18,7 @@ public class FoodController {
 
     private FoodRepository repository;
 
-    //Permitir todas as origens e headers  por hora, durante o teste. Depois restringir pro dominio do frontend.
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
+
     @PostMapping
     public void saveFood(@RequestBody FoodRequestDTO data) {
         Food foodData = new Food(data);
